@@ -1,0 +1,80 @@
+rules:
+  - id: "RULE_HR_OPTIMIZE_EXISTING_ONBOARDING"
+    name: "Optimize Existing HR Onboarding Process"
+    description: "When optimizing existing HR onboarding, analyze event telemetry using Green Platform's Process Mining, build the streamlined modern journey in Purple Platform, and synchronize master records with Green Platform."
+    priority: 100
+    conditions:
+      domain: "HR"
+      capability: "hr.onboarding"
+      intent: "optimize_existing"
+    stages:
+      - phase: "discovery_and_mining"
+        stage_name: "Phase 1: Process Mining & Friction Analysis"
+        platform_id: "green_platform"
+        capability_id: "hr.onboarding.process_mining"
+        action: "Extract historical HR event logs, execute Process Mining, identify onboarding drop-offs, redundant approval loops, and cycle-time bottlenecks."
+        rationale: "Green Platform maintains historical transactional logs and built-in process mining capabilities."
+      - phase: "streamlined_build"
+        stage_name: "Phase 2: Streamlined Workflow & Engagement Portal Build"
+        platform_id: "purple_platform"
+        capability_id: "hr.onboarding.workflow"
+        action: "Model and deploy the re-engineered onboarding journey, interactive new-hire portal, and automated approvals based on mining findings."
+        rationale: "Purple Platform offers flexible, high-productivity low-code UI and workflow orchestration."
+      - phase: "record_synchronization"
+        stage_name: "Phase 3: System of Record Sync & Automated Completion"
+        platform_id: "green_platform"
+        capability_id: "hr.master_data"
+        action: "Establish automated event webhooks/APIs to commit completed onboarding employee records and documents back to Green Platform."
+        rationale: "Green Platform remains the authoritative System of Record for master employee data."
+
+  - id: "RULE_HR_BUILD_NEW_ONBOARDING"
+    name: "Build Green-field Employee Onboarding"
+    description: "When building a new onboarding process, implement engagement and workflow on Purple Platform with automated master sync to Green Platform."
+    priority: 90
+    conditions:
+      domain: "HR"
+      capability: "hr.onboarding"
+      intent: "build_new"
+    stages:
+      - phase: "workflow_build"
+        stage_name: "Phase 1: Employee Journey & Workflow Build"
+        platform_id: "purple_platform"
+        capability_id: "hr.onboarding.workflow"
+        action: "Construct new-hire self-service portal, step-by-step checklist, document upload, and manager tasks in Purple Platform."
+        rationale: "Purple Platform provides omnichannel digital experience, drag-and-drop form building, and rapid low-code assembly."
+      - phase: "record_synchronization"
+        stage_name: "Phase 2: System of Record Ingestion"
+        platform_id: "green_platform"
+        capability_id: "hr.master_data"
+        action: "Trigger automated employee profile creation and document archiving in Green Platform upon onboarding completion."
+        rationale: "Maintains Green Platform as the single source of truth for HR employee master data."
+
+  - id: "RULE_CRM_PROCESS"
+    name: "CRM Capability Build & Update"
+    description: "Route CRM processes and pipeline management directly to Blue Platform."
+    priority: 80
+    conditions:
+      domain: "CRM"
+      capability_pattern: "crm.*"
+    stages:
+      - phase: "crm_implementation"
+        stage_name: "Phase 1: Enterprise CRM Implementation"
+        platform_id: "blue_platform"
+        capability_id: "crm.process"
+        action: "Configure native CRM business objects, opportunity pipelines, customer account management, and CRM portal."
+        rationale: "Blue Platform is the enterprise standard System of Record and Engagement for customer lifecycle."
+
+  - id: "RULE_PAYROLL_PROCESS"
+    name: "Payroll & Tax Rule Engine Updates"
+    description: "Route statutory payroll calculations and updates directly to Dark Blue Platform."
+    priority: 80
+    conditions:
+      domain: "FINANCE"
+      capability_pattern: "finance.payroll|finance.tax_compliance"
+    stages:
+      - phase: "payroll_configuration"
+        stage_name: "Phase 1: Payroll Engine Configuration & Compliance Rule Update"
+        platform_id: "dark_blue_platform"
+        capability_id: "finance.payroll"
+        action: "Update gross-to-net payroll formulas, deduction tables, tax withholding calculations, and statutory disbursements."
+        rationale: "Dark Blue Platform is the specialized and compliance-certified Payroll System of Record."

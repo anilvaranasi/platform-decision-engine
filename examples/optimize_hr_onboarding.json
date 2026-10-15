@@ -1,0 +1,8 @@
+{
+  "initiative_name": "Optimize Existing HR Onboarding Process",
+  "domain": "HR",
+  "capability": "hr.onboarding",
+  "intent": "optimize_existing",
+  "description": "Discover friction in current onboarding using Process Mining on Green platform and build streamlined journey in Purple platform.",
+  "requester": "People Operations & Architecture COE"
+}

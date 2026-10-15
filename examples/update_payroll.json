@@ -1,0 +1,8 @@
+{
+  "initiative_name": "Annual Tax Compliance & Payroll Formula Update",
+  "domain": "FINANCE",
+  "capability": "finance.payroll",
+  "intent": "update_core_process",
+  "description": "Statutory tax rules, gross-to-net calculations, and pay distribution updates.",
+  "requester": "Corporate Payroll & Compliance"
+}

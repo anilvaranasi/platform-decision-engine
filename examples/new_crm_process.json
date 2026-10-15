@@ -1,0 +1,8 @@
+{
+  "initiative_name": "New B2B Lead & Opportunity Pipeline",
+  "domain": "CRM",
+  "capability": "crm.process",
+  "intent": "build_new",
+  "description": "Enterprise lead intake, qualification, and sales pipeline management.",
+  "requester": "Sales Operations"
+}
