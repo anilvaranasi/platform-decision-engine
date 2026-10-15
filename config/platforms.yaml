@@ -1,0 +1,81 @@
+platforms:
+  - id: "green_platform"
+    name: "Green Platform"
+    description: "Enterprise HR System of Record with embedded Process Intelligence"
+    tier: "System of Record & Intelligence"
+    vendor_type: "Core HRIS / HCM"
+    capabilities:
+      - capability_id: "hr.master_data"
+        strength: 0.98
+        features: ["employee_profile", "org_hierarchy", "job_architecture", "audit_log"]
+      - capability_id: "hr.onboarding.process_mining"
+        strength: 0.92
+        features: ["event_log_ingestion", "variant_analysis", "bottleneck_detection", "conformance_checking"]
+      - capability_id: "hr.process_mining"
+        strength: 0.90
+        features: ["process_discovery", "cycle_time_analytics"]
+      - capability_id: "hr.onboarding.workflow"
+        strength: 0.45
+        features: ["rigid_checklists", "standard_notifications"]
+    constraints:
+      - "Do not build custom multi-tier employee portal frontends here due to rigid UI customization limits"
+      - "Authoritative source of record for employee demographics and organizational hierarchy"
+
+  - id: "purple_platform"
+    name: "Purple Platform"
+    description: "Modern Low-Code / Digital Process Automation & Experience Orchestrator"
+    tier: "System of Engagement & Orchestration"
+    vendor_type: "Low-Code / DPA / Workflow Orchestration"
+    capabilities:
+      - capability_id: "hr.onboarding.workflow"
+        strength: 0.96
+        features: ["omnichannel_ux", "drag_and_drop_forms", "api_integrations", "interactive_checklists", "e_signature"]
+      - capability_id: "workflow.custom_app"
+        strength: 0.95
+        features: ["custom_ui", "business_logic_rules", "role_based_dashboards", "mobile_ready"]
+      - capability_id: "workflow.orchestration"
+        strength: 0.94
+        features: ["cross_platform_integration", "event_orchestrator", "human_in_the_loop_tasks"]
+      - capability_id: "portal.employee_self_service"
+        strength: 0.92
+        features: ["modern_portal", "responsive_ui", "custom_theming"]
+    constraints:
+      - "Must not store master employee records long-term (ephemeral task state only)"
+      - "Must push finalized transactions to respective Systems of Record"
+
+  - id: "blue_platform"
+    name: "Blue Platform"
+    description: "Enterprise Customer Relationship Management (CRM) Platform"
+    tier: "Domain System of Record & Engagement"
+    vendor_type: "Enterprise CRM"
+    capabilities:
+      - capability_id: "crm.process"
+        strength: 0.96
+        features: ["lead_lifecycle", "opportunity_pipeline", "quote_to_cash", "account_hierarchy"]
+      - capability_id: "crm.pipeline"
+        strength: 0.95
+        features: ["sales_funnel", "forecasting", "territory_management"]
+      - capability_id: "crm.customer_portal"
+        strength: 0.90
+        features: ["b2b_customer_portal", "case_management", "knowledge_base"]
+    constraints:
+      - "Primary destination for customer-facing and sales lifecycle journeys"
+
+  - id: "dark_blue_platform"
+    name: "Dark Blue Platform"
+    description: "Specialized Global Payroll, Tax Compliance & Disbursement Engine"
+    tier: "System of Record (Payroll & Compliance)"
+    vendor_type: "Dedicated Payroll & Tax Platform"
+    capabilities:
+      - capability_id: "finance.payroll"
+        strength: 0.98
+        features: ["tax_withholding_engine", "direct_deposit", "statutory_reporting", "garnishment_rules"]
+      - capability_id: "finance.tax_compliance"
+        strength: 0.96
+        features: ["multi_jurisdiction_tax", "w2_generation", "year_end_reconciliation"]
+      - capability_id: "finance.disbursement"
+        strength: 0.94
+        features: ["ach_banking", "off_cycle_payments", "payroll_audit"]
+    constraints:
+      - "Critical system: strict change control, segregation of duties required"
+      - "Only authorized for payroll calculations and tax filing logic"
